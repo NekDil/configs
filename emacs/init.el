@@ -33,5 +33,12 @@
 ;;; tabs as spaces
 (setq-default indent-tabs-mode nil)
 
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :config
+  (lsp-enable-which-key-integration t))
+
 (require 'init-rust)
 
